@@ -1,0 +1,44 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./app",
+    "devstart": "node ./scripts/start",
+    "serverstart": "yarn run devstart",
+    "standard": "standard",
+    "standard:fix": "standard --fix",
+    "test:unit": "jest --coverage --verbose --detectOpenHandles",
+    "test:e2e": "cucumber-js ./tests/e2e/features/*.feature"
+  },
+  "dependencies": {
+    "express-sse":"^0.5.3",
+    "express":"^4.18.1",
+    "nodemon":"^2.0.16",
+    "cors":"^2.8.5",
+    "helmet":"^5.1.0",
+    "morgan":"^1.10.0"
+  },
+  "devDependencies": {    
+    "jest":"^28.1.0",
+    "standard":"^17.0.0",
+    "@cucumber/cucumber":"^8.2.1",
+    "chai":"^4.3.6",
+    "axios":"^0.27.2"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "globals": [
+      "describe",
+      "test",
+      "expect",
+      "beforeAll",
+      "afterAll",
+      "beforeEach",
+      "afterEach"
+    ]
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
