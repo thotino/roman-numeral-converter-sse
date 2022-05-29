@@ -15,4 +15,18 @@ yarn install
 ```
 
 # USAGE
-Thsi project is to be used with this [app](https://github.com/thotino/roman-numeral-converter-sse-app).
+This project is to be used with this [app](https://github.com/thotino/roman-numeral-converter-sse-app).
+
+## EXECUTION PROCEDURE
+```
+yarn install
+yarn run serverstart
+```
+This server will use the port 3000.
+
+## EXECUTION PROCEDURE WITH DOCKER
+```
+docker build -t sse-server .
+docker run -p 3000:3000 sse-server
+```
+

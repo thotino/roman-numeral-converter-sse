@@ -29,12 +29,11 @@ const controller = async (req, res) => {
     // Delay for 1 second
     await sleep(1000)
     // Convert to roman numerals
-    const romanNum = convertToRomanNumerals({ number: count })
-    console.log(`Emit: ${count}, Conversion: ${romanNum}`)
+    const romanNum = convertToRomanNumerals({ number: count })    
 
     // The data to be sent to the client
     const data = { emittedNumber: count, convertedNumber: romanNum }
-
+    console.log(data)
     // Emit the event that contains the data
     res.write(`data: ${JSON.stringify(data)}\n\n`)
     ++count
