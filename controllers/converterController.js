@@ -4,13 +4,17 @@
  */
 const { convertToRomanNumerals } = require('../services/convertToRomanNumerals')
 
+// An utility function to delay the events
+const sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 /**
  * This function defines a controller/handler for the roman numerals conversion
  * @param {*} req - The Express request object
  * @param {*} res - The Express result object
  */
 const controller = async (req, res) => {
-  console.log('Got /stream')
   // Setting the headers
   res.set({
     'Cache-Control': 'no-cache',
@@ -22,7 +26,8 @@ const controller = async (req, res) => {
   res.write('retry: 10000\n\n')
   let count = 0
   while (count <= 100) {
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    // Delay for 1 second
+    await sleep(1000)
     // Convert to roman numerals
     const romanNum = convertToRomanNumerals({ number: count })
     console.log(`Emit: ${count}, Conversion: ${romanNum}`)

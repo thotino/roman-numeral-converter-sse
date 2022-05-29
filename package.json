@@ -7,8 +7,7 @@
     "serverstart": "yarn run devstart",
     "standard": "standard",
     "standard:fix": "standard --fix",
-    "test:unit": "jest --coverage --verbose --detectOpenHandles",
-    "test:e2e": "cucumber-js ./tests/e2e/features/*.feature"
+    "test:unit": "jest --coverage --verbose --detectOpenHandles"
   },
   "dependencies": {
     "express-sse":"^0.5.3",
@@ -20,10 +19,7 @@
   },
   "devDependencies": {    
     "jest":"^28.1.0",
-    "standard":"^17.0.0",
-    "@cucumber/cucumber":"^8.2.1",
-    "chai":"^4.3.6",
-    "axios":"^0.27.2"
+    "standard":"^17.0.0"
   },
   "standard": {
     "env": [
